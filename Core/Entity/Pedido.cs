@@ -10,5 +10,9 @@ namespace Core.Entity
     {
        public int ClienteId { get; set; }
        public int LivroId { get; set; }
+
+        //Propriedades de navegação para FK
+        public Cliente Cliente { get; set; }
+        public Livro Livro { get; set; }
     }
 }

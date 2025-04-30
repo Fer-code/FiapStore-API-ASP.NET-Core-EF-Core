@@ -1,4 +1,5 @@
 ﻿using Core.Entity;
+using Infrastructure.Repository.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -32,37 +33,10 @@ namespace Infrastructure.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*Define q tal tabela corresponde a tal classe
-            HasKey chave primaria
-            p. acessa as propriedades da entidade
-            ValueGeneratedNever tira a responsabilidade do EF
-            de criar valores para PK e deixa a responsabilidade para o BD*/
-            modelBuilder.Entity<Cliente>(e => {
-                e.ToTable("Cliente");
-                e.HasKey(p => p.Id);
-                e.Property(p => p.Id).HasColumnType("int").ValueGeneratedNever().UseIdentityColumn();
-                e.Property(p => p.DataCriacao).HasColumnType("DATETIME").IsRequired();
-                e.Property(p => p.Nome).HasColumnType("VARCHAR(100)").IsRequired();
-                e.Property(p => p.DataNascimento).HasColumnType("DATETIME");
-            });
+            
+            //pegar todas as classes q estao no projeto q usam a interfaze IEntityTypeConfiguration
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
 
-            modelBuilder.Entity<Livro>(e => {
-                e.ToTable("Livro");
-                e.HasKey(p => p.Id);
-                e.Property(p => p.Id).HasColumnType("int").ValueGeneratedNever().UseIdentityColumn();
-                e.Property(p => p.DataCriacao).HasColumnType("DATETIME").IsRequired();
-                e.Property(p => p.Nome).HasColumnType("VARCHAR(100)").IsRequired();
-                e.Property(p => p.Editora).HasColumnType("VARCHAR(100)").IsRequired();
-            });
-
-            modelBuilder.Entity<Pedido>(e => {
-                e.ToTable("Pedido");
-                e.HasKey(p => p.Id);
-                e.Property(p => p.Id).HasColumnType("int").ValueGeneratedNever().UseIdentityColumn();
-                e.Property(p => p.DataCriacao).HasColumnType("DATETIME").IsRequired();
-                e.Property(p => p.ClienteId).HasColumnType("int").IsRequired();
-                e.Property(p => p.LivroId).HasColumnType("int").IsRequired();
-            });
         }
     }
 }
