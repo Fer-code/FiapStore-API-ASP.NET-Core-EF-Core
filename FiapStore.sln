@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapStoreAPI", "FiapStore\FiapStoreAPI.csproj", "{2482691E-7F46-477B-B41C-D35A239B9BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{BCA05F01-6F75-49D8-81CC-88F8FFF9E8FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{83481371-08DB-4935-BBE2-F5255E9A2787}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2482691E-7F46-477B-B41C-D35A239B9BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2482691E-7F46-477B-B41C-D35A239B9BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2482691E-7F46-477B-B41C-D35A239B9BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2482691E-7F46-477B-B41C-D35A239B9BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCA05F01-6F75-49D8-81CC-88F8FFF9E8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA05F01-6F75-49D8-81CC-88F8FFF9E8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA05F01-6F75-49D8-81CC-88F8FFF9E8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA05F01-6F75-49D8-81CC-88F8FFF9E8FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83481371-08DB-4935-BBE2-F5255E9A2787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83481371-08DB-4935-BBE2-F5255E9A2787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83481371-08DB-4935-BBE2-F5255E9A2787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83481371-08DB-4935-BBE2-F5255E9A2787}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFE6580F-FB97-4154-A330-48E73F545BAB}
+	EndGlobalSection
+EndGlobal
