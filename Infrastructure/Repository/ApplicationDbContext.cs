@@ -12,6 +12,10 @@ namespace Infrastructure.Repository
     public class ApplicationDbContext : DbContext
     {
         private readonly string _connectionString;
+        public ApplicationDbContext()
+        {
+            
+        }
 
         public ApplicationDbContext(string connectionString)
         {

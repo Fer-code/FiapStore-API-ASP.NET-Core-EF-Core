@@ -11,6 +11,7 @@ namespace Core.Entity
         public required string Nome { get; set; }
         public DateTime? DataNascimento { get; set; }
 
+        public required string CPF { get; set; }
         //cliente vai ter varios pedidos
         public ICollection<Pedido> Pedidos { get; set; }
     }
