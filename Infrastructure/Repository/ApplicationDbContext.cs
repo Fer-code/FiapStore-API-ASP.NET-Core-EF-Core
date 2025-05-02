@@ -1,6 +1,7 @@
 ﻿using Core.Entity;
 using Infrastructure.Repository.Configurations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,12 @@ namespace Infrastructure.Repository
         private readonly string _connectionString;
         public ApplicationDbContext()
         {
-            
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            _connectionString = configuration.GetConnectionString("ConnectionString");
         }
 
         public ApplicationDbContext(string connectionString)
