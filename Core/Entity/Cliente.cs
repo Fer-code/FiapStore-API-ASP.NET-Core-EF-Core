@@ -13,6 +13,6 @@ namespace Core.Entity
 
         public required string CPF { get; set; }
         //cliente vai ter varios pedidos
-        public ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Pedido> Pedidos { get; set; }
     }
 }

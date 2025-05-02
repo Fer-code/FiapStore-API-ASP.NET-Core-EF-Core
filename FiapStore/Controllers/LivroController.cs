@@ -20,7 +20,27 @@ namespace FiapStoreAPI.Controllers
         {
             try
             {
-                return Ok(_livroRepository.ObterTodos());
+                var livrosDto = new List<LivroDto>();
+                var livros = _livroRepository.ObterTodos();
+
+                //é possivel trazer só alguns dados do pedido por causa do lazyloading
+                foreach(var livro in livros)
+                {
+                    livrosDto.Add(new LivroDto()
+                    {
+                        Id = livro.Id,
+                        DataCriacao = livro.DataCriacao,
+                        Nome = livro.Nome,
+                        Editora = livro.Editora,
+                        Pedidos = livro.Pedidos.Select(pedido => new Pedido()
+                        {
+                            ClienteId = pedido.ClienteId,
+                            LivroId = pedido.LivroId,
+                        }).ToList(),
+                    });
+                }
+
+                return Ok(livrosDto);
             }
             catch (Exception ex)
             {

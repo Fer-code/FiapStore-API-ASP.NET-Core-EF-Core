@@ -12,7 +12,7 @@ namespace Core.Entity
         public required string Editora { get; set; }
 
         //livro vai ter varios pedidos
-        public ICollection<Pedido> Pedidos { get; set; }
+        public virtual ICollection<Pedido> Pedidos { get; set; }
 
         public Livro()
         {
