@@ -13,5 +13,11 @@ namespace Core.Entity
 
         //livro vai ter varios pedidos
         public ICollection<Pedido> Pedidos { get; set; }
+
+        public Livro()
+        {
+            DataCriacao = DateTime.Now;
+        }
+
     }
 }

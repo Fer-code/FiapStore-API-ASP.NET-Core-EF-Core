@@ -9,5 +9,7 @@ namespace Core.Repository
 {
     public interface ILivroRepository : IRepository<Livro>
     {
+        //IENumerable pode deixar programa mais rapido
+        void CadastrarEmMassa(IEnumerable<Livro> livros);
     }
 }

@@ -13,5 +13,14 @@ namespace Infrastructure.Repository
         public LivroRepository(ApplicationDbContext context) : base(context)
         {
         }
+
+        public void CadastrarEmMassa(IEnumerable<Livro> livros)
+        {
+            //_context.AddRange(livros);
+            //_context.SaveChanges();
+
+            //mais rapido:
+            _context.BulkInsert(livros);
+        }
     }
 }
