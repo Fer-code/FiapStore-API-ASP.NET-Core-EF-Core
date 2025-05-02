@@ -6,7 +6,7 @@ namespace FiapStoreAPI.Controllers
 {
     [ApiController]
     [Route("/[controller]")]
-    public class ClienteController
+    public class ClienteController : ControllerBase
     {
         private readonly IClienteRepository _clienteRepository;
 
